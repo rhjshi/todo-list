@@ -1,10 +1,10 @@
 import './App.css';
-import EntryBar from './components/EntryBar';
+import TodoModel from './components/TodoModel';
 
 function App() {
   return (
     <div className="">
-      <EntryBar/>
+      <TodoModel/>
     </div>
   );
 }

@@ -1,12 +1,11 @@
+import React from "react";
 
-
-const EntryBar = () => {
+const EntryBar = props => {
 
   return (
-    <div>
-      <input></input>
+    <div class="ui input">
+      <input type="text" placeholder="Search..."/>
     </div>
-
   );
 }
 
