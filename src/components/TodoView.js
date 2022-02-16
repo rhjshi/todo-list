@@ -12,7 +12,7 @@ const TodoView = props => {
   return (
     <div>
       <h1>To-Do List</h1>
-      <EntryBar/>
+      <EntryBar addTodo={props.addTodo}/>
       {todoList}
     </div>
   );
