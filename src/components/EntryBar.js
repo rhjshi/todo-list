@@ -7,11 +7,7 @@ const EntryBar = props => {
     e.preventDefault();
     if (userInput === "") return;
 
-    const todo = {
-      description: userInput,
-      completed: false,
-    }
-    props.addTodo(todo);
+    props.addTodo(userInput);
     setUserInput("");
   }
 
@@ -20,7 +16,7 @@ const EntryBar = props => {
   }
 
   return (
-    <div class="ui input">
+    <div className="ui input">
       <form onSubmit={onSubmitHandler}>
         <input 
           type="text" 

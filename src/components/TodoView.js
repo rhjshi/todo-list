@@ -4,9 +4,11 @@ import TodoItem from "./TodoItem";
 
 const TodoView = props => {
   const todoList = props.todos.map(item =>
-    <TodoItem 
-      description={item.description}
-      completed={item.completed}
+    <TodoItem
+      key={item.id} 
+      todo={item}
+      setCompleteTodo={props.setCompleteTodo}
+      deleteTodo={props.deleteTodo}
     />
   )
   return (
