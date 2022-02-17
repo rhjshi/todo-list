@@ -7,11 +7,14 @@ const TodoItem = props => {
     setChecked(e.currentTarget.checked);
     props.setCompleteTodo(props.todo.id, e.currentTarget.checked);
   };
+  const onDeleteHandler = () => {
+    props.deleteTodo(props.todo.id);
+  }
   return (
     <div className={props.todo.completed ? "strike" : ""}>
       <input type="checkbox" checked={checked} onChange={onChangeHandler}/>
-      {props.todo.description}
-      <button />
+      <span>{props.todo.description}</span>
+      <button onClick={onDeleteHandler}>delete</button>
     </div>
   );
 }

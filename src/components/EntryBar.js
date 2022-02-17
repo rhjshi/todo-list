@@ -5,9 +5,9 @@ const EntryBar = props => {
   
   const onSubmitHandler = e => {
     e.preventDefault();
-    if (userInput === "") return;
+    if (userInput.trim() === "") return;
 
-    props.addTodo(userInput);
+    props.addTodo(userInput.trim());
     setUserInput("");
   }
 
