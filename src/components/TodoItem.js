@@ -14,7 +14,7 @@ const TodoItem = props => {
     <div className={props.todo.completed ? "strike" : ""}>
       <input type="checkbox" checked={checked} onChange={onChangeHandler}/>
       <span>{props.todo.description}</span>
-      <button onClick={onDeleteHandler}>delete</button>
+      <button className="ui negative basic button" onClick={onDeleteHandler}>delete</button>
     </div>
   );
 }
