@@ -1,18 +1,28 @@
 import { React, useState } from "react";
 import TodoView from "./TodoView";
 
+const TODO_KEY = 'todos';
 
-const initialTodoState = [
-  {
-    id: Date.now(),
-    description: "Get milk.",
-    completed: false
-  },
-];
+const updateToLocalStorage = todos => {
+  localStorage.setItem(TODO_KEY, JSON.stringify(todos));
+}
+
+const getFromLocalStorage = () => {
+  const todoStr = localStorage.getItem(TODO_KEY);
+  if (!todoStr) return [];
+
+  return JSON.parse(todoStr);
+}
 
 // copy of model for view 
 const TodoModel = props => {
-  const [todos, updateTodos] = useState(initialTodoState);
+  const [todos, updateTodos] = useState(getFromLocalStorage());
+  
+  const updateModel = todos => {
+    updateToLocalStorage(todos);
+    updateTodos(todos);
+  };
+
   const addTodo = desc => {
     const item = {
       id: Date.now(),
@@ -20,18 +30,20 @@ const TodoModel = props => {
       completed: false
     };
     const newTodos = [...todos, item];
-    updateTodos(newTodos);
-  }
+    updateModel(newTodos);
+  };
+
   const setCompleteTodo = (id, completed) => {
     todos.forEach(item => {
       if (item.id !== id) return;
       item.completed = completed;
     });
-    updateTodos([...todos]);
-  }
+    updateModel([...todos]);
+  };
+
   const deleteTodo = id => {
-    updateTodos(todos.filter(item => item.id !== id));
-  }
+    updateModel(todos.filter(item => item.id !== id));
+  };
 
   return (
     <TodoView
