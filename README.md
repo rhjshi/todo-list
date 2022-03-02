@@ -1,5 +1,17 @@
-# Getting Started with Create React App
+# Todo List
 
+This is the classic todo list project that demonstrates basic programming fundamentals.
+This project was built with **React.js** and uses **Semantic UI** to streamline styling.
+
+Todo items are saved between sessions using localStorage, and the UI implements a MVC-like
+pattern to maintain its state.
+
+Functionality includes:
+- adding a task
+- deleting a task
+- marking a task as complete
+
+#
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
