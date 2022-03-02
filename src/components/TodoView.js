@@ -1,4 +1,5 @@
 import { React } from "react";
+import "../App.css";
 import EntryBar from "./EntryBar";
 import TodoItem from "./TodoItem";
 
@@ -12,10 +13,13 @@ const TodoView = props => {
     />
   )
   return (
-    <div>
-      <h1>To-Do List</h1>
+    <div className="">
+      <h1 className="ui header">To-Do List</h1>
       <EntryBar addTodo={props.addTodo}/>
-      {todoList}
+      
+      <div className="ui relaxed list">
+        {todoList}
+      </div>
     </div>
   );
 }
