@@ -3,7 +3,7 @@ import TodoModel from './components/TodoModel';
 
 function App() {
   return (
-    <div className="">
+    <div className="main-container">
       <TodoModel/>
     </div>
   );

@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import "../App.css"
+import "../App.css";
 
 const TodoItem = props => {
   const [checked, setChecked] = useState(props.todo.completed);

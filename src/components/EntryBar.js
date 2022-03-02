@@ -16,14 +16,17 @@ const EntryBar = props => {
   }
 
   return (
-    <div className="ui input">
+    <div>
       <form onSubmit={onSubmitHandler}>
-        <input 
-          type="text" 
-          placeholder="What to do?"
-          value={userInput}
-          onChange={onChangeHandler}
-        />
+        <div className="ui left icon input">
+          <input 
+            type="text" 
+            placeholder="Add a task ..."
+            value={userInput}
+            onChange={onChangeHandler}
+          />
+          <i className="tasks icon"/>
+        </div>
       </form>
     </div>
   );
