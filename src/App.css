@@ -47,4 +47,15 @@
   margin-left: auto;
   margin-right: auto;
   padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-item .center-aligned {
+  margin-top: auto;
+  margin-bottom: auto;  
 }

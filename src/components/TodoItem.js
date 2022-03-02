@@ -11,10 +11,23 @@ const TodoItem = props => {
     props.deleteTodo(props.todo.id);
   }
   return (
-    <div className={`item ${props.todo.completed ? "strike" : ""}`}>
-      <input type="checkbox" checked={checked} onChange={onChangeHandler}/>
-      <span>{props.todo.description}</span>
-      <button className="ui negative basic button" onClick={onDeleteHandler}>delete</button>
+    <div className="item">
+      <div className="ui segment todo-item">
+        <div className="ui checkbox center-aligned">
+          <input type="checkbox" checked={checked} onChange={onChangeHandler}/>
+          <label 
+            style={{fontSize: "1.2rem"}}
+            className={props.todo.completed ? "strike" : ""}
+          >
+            {props.todo.description}
+          </label>
+        </div>
+        <div>    
+          <button className="compact ui icon button" onClick={onDeleteHandler}>
+            <i className="trash icon"/>
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
